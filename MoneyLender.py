@@ -78,8 +78,6 @@ class SingleGame:
                 else:
                     self.coins += 3
 
-                self.discard.append(card)
-
         # stores coinage on a particular turn
         if(self.turnNumber == 1):
             self.a = self.coins
