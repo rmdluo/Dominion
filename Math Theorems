@@ -1,0 +1,4 @@
+Theorem 1: Suppose the shuffled deck contains $a$ of card A, $b$ of card B, ..., and $n$ of card N. Then, the probability of drawing a hand of $5$ cards consisting of $a'$ of card A, $b'$ of card B, ..., and $n'$ of card N, is $\frac{{a \choose a'}{b \choose b'}\cdots{n \choose n'}}{{(a+b+...+n) \choose 5}}$.
+
+Copy and paste into https://artofproblemsolving.com/texer
+
