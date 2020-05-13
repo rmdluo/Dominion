@@ -1,0 +1,38 @@
+1) Your hand is
+7 coppers
+3 estates
+1 moneylender
+1 silver
+
+By hand and by simulation find out
+
+a) For all numbers between 0 and 7 what is prob of getting that much money.
+in a  5-card and
+
+b) For all pairs (i,j) of 0 to 7, what is prob that when you get two hands in a row
+(and note that the first five cards are not in the second hand) you get
+i in first hand
+j in second hand.
+
+2) Simluat various inventor sttrateigs until you get ALL provinces
+(can do both 8 and 12 proivinces)
+Here is strategy and variants
+
+Action phase: Play all villages and then play all inventors
+When play inventor get
+inventor or village- whichever one you have less of
+In case of a tie- OPTIONS can either do 
+VILLAGE always
+INVENTOR always
+Flip a coin.
+
+In By phase 
+If can buy province, then do so.
+If not then Village or inventor, various strategies for which one.
+
+Simulat alot- how many turns needed to get all the provinces
+
+Caveat: will also to deal with when villages or inventor pile is empty
+(starts with 10 cards).
+
+bill g.
