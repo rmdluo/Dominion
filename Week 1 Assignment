@@ -1,0 +1,29 @@
+If you do moneylender-silver start (7 copper + 3 estate)
+Write program for probability for hands (assume no attack cards)
+
+Do by hand finding probability to get 6 dollars
+
+a dollars 3rd hand, b dollars 4th hand
+
+maybe:
+Probability that you get 2 coppers
+
+
+
+Wednesday 13th 10:00 AM = play + progress
+
+Todo:
+Set up deck system
+
+Create the following cards:
+  copper
+    treasure - cost 0 - gives 1 dollar
+  silver
+    treasure - cost 3 - gives 2 dollars
+  estate
+    victory - cost 2 - gives 1 VP
+  moneylender
+    action - cost 4 - trash 1 copper for +3 dollars
+    
+create simulation for runs of the situation
+  
