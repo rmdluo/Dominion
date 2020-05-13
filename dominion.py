@@ -8,7 +8,7 @@ first two turns.
 
 from MoneyLender import SingleGame
 
-NUM_RUNS = 10000
+NUM_RUNS = 100000
 
 # possible coinages on turns 1, 2, 3, and 4
 # [1 coin, 2 coins, 3 coins, 4 coins, 5 coins, 6 coins, 7 coins]
