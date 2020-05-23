@@ -1,5 +1,13 @@
-# Start with 7 copper and 3 estate
-# P(a dollars 3rd hand, b dollars 4th hand) = ?
+# Use the probability(hand, deck) function in this file 
+# to calculate the probability of getting a certain hand 
+# given a randomly shuffled deck.
+
+# The main() function in this file
+# computes the probability of getting all possible hands
+# given a randomly shuffled deck containing 7 copper and 3 estate.
+
+# Michael Chu
+# 5/22/20
 
 import math
 
