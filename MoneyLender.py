@@ -7,7 +7,7 @@ import random
 
 class SingleGame:
     def __init__(self):
-        self.deck = ["treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "victory-estate", "victory-estate", "victory-estate"]
+        self.deck = ["treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-silver", "victory-estate", "victory-estate", "victory-estate", "action-moneylender"]
         self.hand = []
         self.discard = []
         self.actions = 0
@@ -18,15 +18,15 @@ class SingleGame:
         # coinages on turns 1, 2, 3, and 4
         self.a = 0
         self.b = 0
-        self.c = 0
-        self.d = 0
+        #self.c = 0
+        #self.d = 0
 
 
     # simulates a "moneylender" game up to 4 turns
     def simulateRun(self):
         self.shuffleDeck()
         self.draw(5)
-        for number in range(4):
+        for number in range(2):
             self.turn()
 
 
@@ -83,10 +83,10 @@ class SingleGame:
             self.a = self.coins
         elif (self.turnNumber == 2):
             self.b = self.coins
-        elif(self.turnNumber == 3):
-            self.c = self.coins
-        elif (self.turnNumber == 4):
-            self.d = self.coins
+        #elif(self.turnNumber == 3):
+        #    self.c = self.coins
+        #elif (self.turnNumber == 4):
+        #    self.d = self.coins
 
         # makes buying decision
         # buy a gold if enough money
