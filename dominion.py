@@ -14,8 +14,8 @@ NUM_RUNS = 100000
 # [1 coin, 2 coins, 3 coins, 4 coins, 5 coins, 6 coins, 7 coins]
 outcomesA = [0, 0, 0, 0, 0, 0, 0]
 outcomesB = [0, 0, 0, 0, 0, 0, 0]
-outcomesC = [0, 0, 0, 0, 0, 0, 0]
-outcomesD = [0, 0, 0, 0, 0, 0, 0]
+#outcomesC = [0, 0, 0, 0, 0, 0, 0]
+#outcomesD = [0, 0, 0, 0, 0, 0, 0]
 
 print("Moneylender + silver simulated " + str(NUM_RUNS) + " times:")
 
@@ -26,10 +26,10 @@ for number in range(NUM_RUNS):
     # update possible coinages
     outcomesA[game.a - 1] += 1
     outcomesB[game.b - 1] += 1
-    outcomesC[game.c - 1] += 1
-    outcomesD[game.d - 1] += 1
+    #outcomesC[game.c - 1] += 1
+    #outcomesD[game.d - 1] += 1
 
 print("Possible coinage on turn 1: " + str(outcomesA))
 print("Possible coinage on turn 2: " + str(outcomesB))
-print("Possible coinage on turn 3: " + str(outcomesC))
-print("Possible coinage on turn 4: " + str(outcomesD))
+#print("Possible coinage on turn 3: " + str(outcomesC))
+#print("Possible coinage on turn 4: " + str(outcomesD))
