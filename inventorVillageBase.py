@@ -10,7 +10,9 @@ counts how many turns are needed to get all of the provinces
 
 BIG NOTE: YOU REALLY NEED CARD DRAW FOR THIS
 
-UPPING CARD DRAW ON VILLAGE FROMM 1 TO 2 SIGNIFICANTLY IMPROVES PERFORMANCE
+UPPING CARD DRAW ON VILLAGE FROM 1 TO 2 SIGNIFICANTLY IMPROVES PERFORMANCE
+
+EVEN MORE IMPROVEMENT IF CARD DRAW IS UPPED TO 4
 
 TRY ADDING IN LABORATORY OR COUNCIL ROOM
 
@@ -22,6 +24,7 @@ import random
 
 class SingleGame:
     def __init__(self):
+        self.file = open("gameInventorVillageBase.txt", "w")
         self.deck = ["treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "treasure-copper", "victory-estate", "victory-estate", "victory-estate"]
         self.hand = []
         self.discard = []
@@ -41,11 +44,11 @@ class SingleGame:
         while(self.provinces > 0):
             self.turn()
 
+        self.file.close()
+
 
     # simulates a turn
     def turn(self):
-
-
 
         self.costReduction = 0
 
@@ -54,12 +57,12 @@ class SingleGame:
         self.buys = 1
         self.coins = 0
 
+        self.file.write(str(self.turnNumber) + ": " + str(self.provinces) + ", " + str(self.numInventor) + ", " + str(self.numVillage) + "\n")
+        self.file.write(str(self.hand) + "\n")
 
-        print(str(self.turnNumber) + ": " + str(self.provinces))
-        
         self.action()
 
-        print(self.hand)
+        self.file.write(str(self.hand) + "\n")
         
         self.buy()
         self.cleanUp()
@@ -78,6 +81,8 @@ class SingleGame:
         while(len(playableActions) > 0 and self.actions > 0):
             if("action-village" in playableActions):
 
+                self.file.write("play village" + "\n")
+
                 for number in range(1):
                     self.draw(1)
                     card = self.hand[len(self.hand) - 1]
@@ -91,6 +96,8 @@ class SingleGame:
              
             elif("action-inventor" in playableActions):
 
+                self.file.write("play inventor" + "\n")
+                
                 if(8 - self.costReduction <= 4):
                     self.discard.append("victory-province")
                     self.provinces -= 1
@@ -118,7 +125,6 @@ class SingleGame:
 
     # buys stuff based on criteria we decided
     def buy(self):
-        self.coins += self.costReduction
         
         # plays all of the treasures that can be played
         for card in self.hand:
@@ -131,12 +137,12 @@ class SingleGame:
                     self.coins += 3
 
         while(self.buys > 0):
-            if(8 <= self.coins):
+            if(8 - self.costReduction <= self.coins):
                 self.discard.append("victory-province")
                 self.coins -= 8
                 self.provinces -= 1
                 
-            elif (4 <= self.coins):
+            elif (4 - self.costReduction <= self.coins):
                 if(self.numInventor < self.numVillage): # if 10 inventors have been bought then this cannot be true
                     self.discard.append("action-inventor")
                     self.numInventor += 1
@@ -158,7 +164,7 @@ class SingleGame:
                         self.numVillage += 1
                         self.coins -= 3
                     
-            elif(3 <= self.coins):
+            elif(3 - self.costReduction <= self.coins):
                 if(self.numVillage < 10):
                     self.discard.append("action-village")
                     self.numVillage += 1
