@@ -15,7 +15,7 @@ import random
 
 class SingleGame:
     def __init__(self, numInventors, numVillages):
-        self.file = open("gameInventorVillageBase.txt", "w")
+        self.file = open("gameInventorVillageOnly.txt", "w")
         self.deck = []
 
         for card in range(numInventors):
